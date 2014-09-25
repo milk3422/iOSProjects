@@ -42,7 +42,7 @@
         <!--To-Do List-->
         <scene sceneID="dv7-ev-wkK">
             <objects>
-                <tableViewController id="LXS-5O-anF" sceneMemberID="viewController">
+                <tableViewController id="LXS-5O-anF" customClass="ToDoListTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oiC-Fc-ObI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

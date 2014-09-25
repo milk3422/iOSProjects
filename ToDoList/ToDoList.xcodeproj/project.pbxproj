@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F5F523619D4364A002477CC /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F523519D4364A002477CC /* AddToDoItemViewController.swift */; };
+		9F5F523819D43749002477CC /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F523719D43749002477CC /* ToDoListTableViewController.swift */; };
 		9FCCD1B819D31AF800346042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD1B719D31AF800346042 /* AppDelegate.swift */; };
 		9FCCD1BA19D31AF800346042 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD1B919D31AF800346042 /* ViewController.swift */; };
 		9FCCD1BD19D31AF800346042 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FCCD1BB19D31AF800346042 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		9F5F523519D4364A002477CC /* AddToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToDoItemViewController.swift; path = ../AddToDoItemViewController.swift; sourceTree = "<group>"; };
+		9F5F523719D43749002477CC /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		9FCCD1B219D31AF800346042 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCCD1B619D31AF800346042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FCCD1B719D31AF800346042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				9FCCD1BB19D31AF800346042 /* Main.storyboard */,
 				9FCCD1BE19D31AF800346042 /* Images.xcassets */,
 				9FCCD1C019D31AF800346042 /* LaunchScreen.xib */,
+				9F5F523719D43749002477CC /* ToDoListTableViewController.swift */,
 				9FCCD1B519D31AF800346042 /* Supporting Files */,
 			);
 			path = ToDoList;
@@ -218,6 +221,7 @@
 				9FCCD1BA19D31AF800346042 /* ViewController.swift in Sources */,
 				9F5F523619D4364A002477CC /* AddToDoItemViewController.swift in Sources */,
 				9FCCD1B819D31AF800346042 /* AppDelegate.swift in Sources */,
+				9F5F523819D43749002477CC /* ToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
