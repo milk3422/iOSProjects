@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add To-Do Item-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,10 +30,14 @@
                             <constraint firstItem="FYh-Jn-Rn8" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="fag-RP-hgm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add To-Do Item" id="Ypi-fs-QBm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QbL-2D-A8s"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bpG-6l-bMr"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="-817"/>
+            <point key="canvasLocation" x="2634" y="-817"/>
         </scene>
         <!--To-Do List-->
         <scene sceneID="dv7-ev-wkK">
@@ -267,7 +271,7 @@
                     <navigationItem key="navigationItem" title="To-Do List" id="qlS-U8-oCz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aCa-cM-5Lx">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="show" id="pvz-l5-7Ow"/>
+                                <segue destination="RwY-bK-fYB" kind="presentation" id="pvz-l5-7Ow"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -293,6 +297,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hr-5J-FfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="315" y="-817"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bQ9-wQ-cMz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RwY-bK-fYB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MBt-XU-NCp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="PGS-fD-zZb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pet-Ig-dKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="-817"/>
         </scene>
     </scenes>
 </document>
