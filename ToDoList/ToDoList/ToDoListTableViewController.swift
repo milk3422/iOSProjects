@@ -10,6 +10,9 @@ import UIKit
 
 class ToDoListTableViewController: UITableViewController {
 
+    // Initialize an array of ToDoItem
+    var toDoItems: [ToDoItem] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,9 @@ class ToDoListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
+        // Load some data
+        self.loadInitialData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,17 +33,17 @@ class ToDoListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete method implementation.
-//        // Return the number of rows in the section.
-//        return 0
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 0
+    }
+
+    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return 0
+    }
 
     /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
@@ -93,6 +99,19 @@ class ToDoListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+
+    func loadInitialData() {
+
+        //
+        toDoItems.append(ToDoItem(name: "Grocery"))
+        toDoItems.append(ToDoItem(name: "Foo"))
+        toDoItems.append(ToDoItem(name: "Bar"))
+        toDoItems.append(ToDoItem(name: "Baz"))
+
+
+
+    }
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         
