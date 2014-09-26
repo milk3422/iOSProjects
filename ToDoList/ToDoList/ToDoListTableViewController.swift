@@ -33,31 +33,52 @@ class ToDoListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+    override func numberOfSectionsInTableView(tableView: (UITableView!)) -> Int {
+
+        // Return 1 sections to only display a single selection
+        return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+    override func tableView(tableView: (UITableView!), numberOfRowsInSection section: Int) -> Int {
+
+        // Return the number of items in the toDoItems Array
+        return self.toDoItems.count
+    }
+
+
+    // Load the rows into the table
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
+
+        let toDoItem = toDoItems[indexPath.row]
+
+        cell.textLabel?.text = toDoItem.itemName
+
+        // Decide to place a checkmark in the cell
+        if toDoItem.isCompleted {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+
+        return cell
     }
 
     /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
         // Configure the cell...
 
         return cell
     }
     */
 
+
     /*
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func tableView(tableView: (UITableView!), canEditRowAtIndexPath indexPath: (NSIndexPath!)) -> Bool {
+
+
         // Return NO if you do not want the specified item to be editable.
         return true
     }
@@ -101,17 +122,50 @@ class ToDoListTableViewController: UITableViewController {
     */
 
 
+
+
+
+    /// This method does things.
+    /// Here are the steps you should follow to use this method
+    ///
+    /// 1. Prepare your thing
+    /// 2. Tell all your friends about the thing.
+    /// 3. Call this method to do the thing.
+    ///
+    /// Here are some bullet points to remember
+    ///
+    /// * Do it right
+    /// * Do it now
+    /// * Don't run with scissors (unless it's tuesday)
+    ///
+    /// :param: name The name of the thing you want to do
+    /// :returns: a message telling you we did the thing
     func loadInitialData() {
 
-        //
+        // Fake Data
         toDoItems.append(ToDoItem(name: "Grocery"))
         toDoItems.append(ToDoItem(name: "Foo"))
         toDoItems.append(ToDoItem(name: "Bar"))
         toDoItems.append(ToDoItem(name: "Baz"))
+    }
 
 
+    // Handle the event when a row is selected
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Deselect the row immediately
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        // Determine which cell was selected
+        let tappedItem = self.toDoItems[indexPath.row]
+
+        // Set the item state to the opposite of what it was set before
+        tappedItem.isCompleted = !tappedItem.isCompleted
+
+        // Ensure the row is reloaded into the table
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
 
     }
+
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         
