@@ -10,6 +10,12 @@ import UIKit
 
 class AddToDoItemViewController: UIViewController {
 
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+
+    var toDoItem: ToDoItem?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +26,18 @@ class AddToDoItemViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    // Prepare for the segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // If the done button was not pressed, do nothing
+        if sender as? UIBarButtonItem != self.doneButton { return }
+
+
+        // If the text field has text create a ToDoItem to get added to the list
+        if !self.textField.text.isEmpty {
+            self.toDoItem = ToDoItem(name: self.textField.text)
+        }
     }
-    */
 
 }

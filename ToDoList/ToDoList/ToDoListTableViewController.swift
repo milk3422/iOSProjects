@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoListTableViewController: UITableViewController {
 
-    // Initialize an array of ToDoItem
+    /// An array of ToDoItem to display in the table
     var toDoItems: [ToDoItem] = []
 
     override func viewDidLoad() {
@@ -152,6 +152,7 @@ class ToDoListTableViewController: UITableViewController {
 
     // Handle the event when a row is selected
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
         // Deselect the row immediately
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
@@ -166,9 +167,17 @@ class ToDoListTableViewController: UITableViewController {
 
     }
 
-
+    // Handle the unwind from the AddToDoItem view
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
-        
+
+        // Get the source controller
+        let source: AddToDoItemViewController  = segue.sourceViewController as AddToDoItemViewController
+
+        // If the sources toDoItem is not nil, add it to the list
+        if let item = source.toDoItem {
+            self.toDoItems.append(item)
+            self.tableView.reloadData()
+        }
     }
 
 }
