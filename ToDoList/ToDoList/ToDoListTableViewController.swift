@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ToDoListTableViewController: UITableViewController {
 
@@ -121,8 +122,20 @@ class ToDoListTableViewController: UITableViewController {
     }
     */
 
-
-
+//
+//    func saveData() {
+//
+//        let fileManager = NSFileManager.defaultManager()
+//
+//        fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)
+//
+//
+//        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+//        let documentsDirectory = paths.objectAtIndex(0) as NSString
+//        let path = documentsDirectory.stringByAppendingPathComponent("MyFile.plist")
+//
+//        data.writeToFile(path, atomically: true)
+//    }
 
 
     /// This method does things.
@@ -141,6 +154,25 @@ class ToDoListTableViewController: UITableViewController {
     /// :param: name The name of the thing you want to do
     /// :returns: a message telling you we did the thing
     func loadInitialData() {
+
+
+//
+//        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+//        let documentsDirectory = paths.objectAtIndex(0)as NSString
+//        let path = documentsDirectory.stringByAppendingPathComponent("MyFile.plist")
+//
+//        let fileManager = NSFileManager.defaultManager()
+//
+//        // Check if file exists
+//        if(!fileManager.fileExistsAtPath(path))
+//        {
+//            // If it doesn't, copy it from the default file in the Resources folder
+//            let bundle = NSBundle.mainBundle().pathForResource("DefaultFile", ofType: "plist")
+//            fileManager.copyItemAtPath(bundle, toPath: path, error:nil)
+//        }
+//
+//        var data = NSMutableArray(contentsOfFile: path)
+
 
         // Fake Data
         toDoItems.append(ToDoItem(name: "Grocery"))
